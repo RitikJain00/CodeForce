@@ -1,0 +1,1 @@
+{"name":"Local: 9024","url":"d:\\c++\\9024.cpp","tests":[{"id":1722664724858,"input":"4\n8 5\n1 2\n4 4\n3 0 \n","output":"3 1\n1 0\n0 0\n3 0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\9024.cpp","group":"local","local":true}

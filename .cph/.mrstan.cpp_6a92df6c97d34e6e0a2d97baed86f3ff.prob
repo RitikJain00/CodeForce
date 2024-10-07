@@ -1,0 +1,1 @@
+{"name":"Local: mrstan","url":"d:\\c++\\mrstan.cpp","tests":[{"id":1708099134294,"input":"5\n1\n2\n3\n4\n7","output":"ALICE\nALICE\nBOB\nALICE\nPOLYCARP"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\mrstan.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 100023","url":"d:\\c++\\100023.cpp","tests":[{"id":1725865978685,"input":"5\n1\n2\n381\n165\n79\n","output":"6\n15\n\n\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\100023.cpp","group":"local","local":true}

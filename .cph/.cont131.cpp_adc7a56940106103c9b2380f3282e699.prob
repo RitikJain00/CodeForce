@@ -1,0 +1,1 @@
+{"name":"Local: cont131","url":"d:\\c++\\cont131.cpp","tests":[{"id":1712587324540,"input":"4\n2 5 9\n3 5 9\n3 5 11\n4 5 11","output":"9\n14\n15\n20"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\cont131.cpp","group":"local","local":true}

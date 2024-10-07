@@ -1,0 +1,1 @@
+{"name":"Local: EC164B","url":"d:\\c++\\EC164B.cpp","tests":[{"id":1713116616765,"input":"5\n3\n2 2 2\n5\n1 2 1 2 1\n1\n1\n7\n3 3 3 5 3 3 3\n4\n1 1 2 1","output":"-1\n1\n-1\n3\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\EC164B.cpp","group":"local","local":true}

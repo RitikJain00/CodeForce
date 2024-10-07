@@ -1,0 +1,1 @@
+{"name":"Local: EC168A","url":"d:\\c++\\EC168A.cpp","tests":[{"id":1722350824989,"input":"4\na\naaa\nabb\npassword\n","output":"wa\naada\nabcb\npastsword\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\EC168A.cpp","group":"local","local":true}

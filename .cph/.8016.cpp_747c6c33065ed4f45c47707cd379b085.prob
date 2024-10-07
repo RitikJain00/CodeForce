@@ -1,0 +1,1 @@
+{"name":"Local: 8016","url":"d:\\c++\\8016.cpp","tests":[{"id":1712822395334,"input":"4\n2\n1 1\n4\n1 8 10 13\n3\n1 3 2\n3\n1 9 14","output":"1\n2\n0\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++\\8016.cpp","group":"local","local":true}
