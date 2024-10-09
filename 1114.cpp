@@ -59,38 +59,45 @@ void solve()
 {
     int n;
     cin >> n;
-    vi v(n);
 
-    fr(i, n)
-    {
-        cin >> v[i];
-    }
+    vi v1(n);
+    vi v2(n);
 
-    if (n == 1) // if only one number is present then it can be divisible by infinity
-    {
-        cout << 0 << endl;
-        return;
-    }
+    fr(i, n) cin >> v1[i];
+    fr(i, n) cin >> v2[i];
 
-    vi st;
     int i = 0;
-    int j = n - 1;
 
-    while (i < j)
+    while (i < n) // reach the first not match index
     {
-        st.push_back(abs(v[j] - v[i]));
+        if (v1[i] != v2[i])
+            break;
         i++;
+    }
+
+    int j = n - 1;
+    while (j >= 0) // reach the last not match index
+    {
+        if (v1[j] != v2[j])
+            break;
         j--;
     }
 
-    int val = st[0];
-
-    fr(i, st.size())
+    while (i >= 1) // Already sorted remain intact so increase the size of window
     {
-        val = __gcd(val, st[i]);
+        if (v2[i - 1] > v2[i])
+            break;
+        i--;
     }
 
-    cout << val << endl;
+    while (j < n - 1)
+    {
+        if (v2[j + 1] < v2[j])
+            break;
+        j++;
+    }
+
+    cout << i + 1 << " " << j + 1 << endl;
 }
 
 int32_t main()
