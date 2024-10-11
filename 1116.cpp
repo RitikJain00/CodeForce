@@ -57,44 +57,35 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 
 void solve()
 {
-    string str;
-    cin >> str;
+    int n;
+    cin >> n;
 
-    int n = str.size();
+    vi v(n);
 
-    str += str;
+    fr(i, n) cin >> v[i];
 
-    int i = 0;
-    int j = 0;
-    int ans = 0;
+    srt(v);
 
-    while (i < n)           // finding the longest continous 1
+    if (v[0] != 1)
     {
-        while (j < (2 * n) && str[j] == '1')
-        {
-            j++;
-        }
-        ans = max(j - i, ans);
-        while (j < (2 * n) && str[j] == '0')
-        {
-            j++;
-        }
-        i = j;
-    }
-
-    if (ans == (2 * n))   // if whole string is made up of 1
-    {
-        cout << (int)(n * n) << endl;
+        cout << "NO" << endl;
         return;
     }
 
-    if ((ans % 2) == 1)   // if 1s string is odd
+    int sum = 1;
+
+    for (int i = 1; i < n; i++)
     {
-        cout << (int)(pow((ans / 2) + 1, 2)) << endl;
-        return;
+        if (v[i] > sum)
+        {
+            cout << "NO" << endl;
+            return;
+        }
+
+        sum += v[i];
     }
 
-    cout << (int)(((ans / 2) + 1) * (ans / 2)) << endl;
+    cout << "YES" << endl;
 }
 
 int32_t main()
