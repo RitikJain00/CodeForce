@@ -57,39 +57,15 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 
 void solve()
 {
-    int n, l, r;
-    cin >> n >> l >> r;
+    // skip this quetion highle mathematical and out of range problem 
+    // it cannot be solved so dont waste time in it 
+    
+    int n;
+    cin >> n;
 
-    vi v;
-    int count = 1;
+    int mod = 1e9 + 7;
 
-    while (count <= n)
-    {
-        if ((l % count) == 0)
-            v.push_back(l);
-        else
-        {
-            int div = (l / count);
-            if ((div + 1) * count <= r)
-                v.push_back((div + 1) * count);
-            else
-                break;
-        }
-        count++;
-    }
-
-    if (count <= n)
-    {
-        cout << "NO" << endl;
-        return;
-    }
-
-    cout << "YES" << endl;
-    fr(i, v.size())
-    {
-        cout << v[i] << " ";
-    }
-    nl;
+    cout << 337 * (((n * ((n + 1) % mod)) % mod) * (((4 * n) % mod) - 1)) % mod << endl;
 }
 
 int32_t main()

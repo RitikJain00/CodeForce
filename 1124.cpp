@@ -57,52 +57,22 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 
 void solve()
 {
-    int n, c;
-    cin >> n >> c;
+    int n;
+    cin >> n;
 
-    vector<pair<int, int>> v(n);
-    int val;
-    int mini = INT_MAX;
-    int index = -1;
+    int ans = 0;
+    for (int i = 0; i < 32; i++)
+        ans |= (1 << i);
+
     fr(i, n)
     {
+        int val = 0;
         cin >> val;
-        if (val + (i + 1) < mini)
-        {
-            mini = val + (i + 1);
-            index = i;
-        }
-        v[i].first = min(val + (i + 1), val + (n - i));
-        v[i].second = i;
+        if (val != i)
+            ans &= val; // need to swap
     }
 
-    srt(v);
-
-    if (mini > c)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    int count = 1;
-    int i = 0;
-    int sum = mini;
-
-    while (i < n)
-    {
-        if (v[i].second == index)
-        {
-            i++;
-            continue;
-        }
-        sum += v[i].first;
-        if (sum > c)
-            break;
-
-        count++;
-        i++;
-    }
-
-    cout << count << endl;
+    cout << ans << endl;
 }
 
 int32_t main()
