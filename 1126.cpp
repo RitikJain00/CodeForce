@@ -57,41 +57,47 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 
 void solve()
 {
-  string s;
+  int n;
+  cin >> n;
 
-  cin >> s;
-  int n = s.length(); // logic is string will repeat continously
+  vi v(n, 0);
+  fr(i, n) cin >> v[i];
 
-  int i = 0;
-  vi check(26, 0);
-
-  while (i < n)
+  if (n == 1)
   {
-    if (check[s[i] - 'a'] == 0) // if new character mark it first
-    {
-      check[s[i] - 'a']++;
-      i++;
-    }
-    else // character repeate
-      break;
+    cout << 0 << endl;
+    return;
   }
 
-  int j = 0;
-  bool flag = true;
-  while (i < n)
+  int ans = 0;
+  int st = 0;
+  int e = n - 1;
+
+  int lsum = v[st];
+  int rsum = v[e];
+
+  while (st < e)
   {
-    if (s[i] != s[j]) // not matched
+
+    if (lsum == rsum)
     {
-      cout << "NO" << endl;
-      flag = false;
-      break;
+      ans = (st + 1) + (n - e);
+      st++;
+      lsum += v[st];
     }
-    i++;
-    j++;
+    else if (lsum < rsum)
+    {
+      st++;
+      lsum += v[st];
+    }
+    else
+    {
+      e--;
+      rsum += v[e];
+    }
   }
 
-  if (flag)
-    cout << "YES" << endl;
+  cout << ans << endl;
 }
 
 int32_t main()
