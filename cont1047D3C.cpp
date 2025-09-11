@@ -57,8 +57,26 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int a, b;
+    cin >> a >> b;
+
+    if ((a & 1) && (b & 1)) // odd odd
+    {
+        cout << a * b + 1 << endl;
+    }
+    else if (!(a & 1) && !(b & 1)) //  Even   Even
+    {
+        cout << (a * (b / 2)) + 2 << endl;
+    }
+    else if ((a & 1) && !(b & 1) && !((b / 2) & 1)) // Even   Odd
+    {
+        // when even number both factor is even
+        cout << (a * (b / 2)) + 2 << endl; // multiply largest factor
+    }
+    else
+    {
+        cout << -1 << endl;
+    }
 }
 
 int32_t main()

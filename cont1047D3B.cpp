@@ -59,21 +59,21 @@ void solve()
 {
     int n;
     cin >> n;
+    vi v(n, 0);
+    int maxi = 0;
 
-    vi v(n);
-
-    fr(i, n) cin >> v[i];
-
-    int sum = 0;
-
-    fr(i, n - 2)
+    fr(i, n)
     {
-        sum += v[i];
+        cin >> v[i];
+        maxi = max(v[i], maxi);
     }
 
-    sum = v[n - 2] - sum;
+    fr(i, n)
+    {
+        cout << maxi + 1 - v[i] << " ";
+    }
 
-    cout << v[n - 1] - sum << endl;
+    cout << endl;
 }
 
 int32_t main()

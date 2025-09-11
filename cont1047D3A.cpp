@@ -58,68 +58,12 @@ ostream &operator<<(ostream &cout, const vector<typC> &a)
 void solve()
 {
     int n;
-    cin >> n;
+    int k;
+    cin >> k >> n;
 
-    string ans = "";
+    fr(i, k) n = n * 2;
 
-    for (int i = 0; i < n; ++i)
-    {
-        string query;
-        query += ans;
-        int res;
-
-        while (1)
-        {
-            query += "0";
-            cout << "? " + query << endl;
-            cout.flush();
-
-            cin >> res;
-
-            if (res)
-            {
-                ans += "0";
-                break;
-            }
-
-            if(i == 0)
-            {
-                ans += "1";
-                break;
-            }
-            query[query.length()-1] = '1';
-
-            cout << "? " + query << endl;
-            cout.flush();
-
-            cin >> res;
-
-            if (res)
-            {
-                ans += "1";
-                break;
-            }
-
-            query.pop_back();
-            query = "1" + query;
-
-            cout << "? " + query << endl;
-            cout.flush();
-
-            cin >> res;
-            if (res)
-            {
-                ans = "1" + ans;
-                break;
-            }
-
-            ans = "0" + ans;
-            break;
-        }
-    }
-
-    cout << "! " + ans << endl;
-    cout.flush();
+    cout << n << endl;
 }
 
 int32_t main()

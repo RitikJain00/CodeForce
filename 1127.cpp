@@ -29,49 +29,69 @@ istream &operator>>(istream &cin, pair<typC, typD> &a) { return cin >> a.first >
 template <typename typC>
 istream &operator>>(istream &cin, vector<typC> &a)
 {
-    for (auto &x : a)
-        cin >> x;
-    return cin;
+  for (auto &x : a)
+    cin >> x;
+  return cin;
 }
 template <typename typC, typename typD>
 ostream &operator<<(ostream &cout, const pair<typC, typD> &a) { return cout << a.first << ' ' << a.second; }
 template <typename typC, typename typD>
 ostream &operator<<(ostream &cout, const vector<pair<typC, typD>> &a)
 {
-    for (auto &x : a)
-        cout << x << '\n';
-    return cout;
+  for (auto &x : a)
+    cout << x << '\n';
+  return cout;
 }
 template <typename typC>
 ostream &operator<<(ostream &cout, const vector<typC> &a)
 {
-    int n = a.size();
-    if (!n)
-        return cout;
-    cout << a[0];
-    for (int i = 1; i < n; i++)
-        cout << ' ' << a[i];
+  int n = a.size();
+  if (!n)
     return cout;
+  cout << a[0];
+  for (int i = 1; i < n; i++)
+    cout << ' ' << a[i];
+  return cout;
 }
 // ===================================END Of the input module ==========================================
 
 void solve()
 {
-    int n;
-    cin >> n;
+  int n, k;
+  cin >> n >> k;
+
+  map<int, int> mp;
+  int val = 0;
+
+  fr(i, n)
+  {
+    cin >> val;
+    mp[val]++;
+  }
+
+  for (auto it : mp)
+  {
+    if (mp.count(it.first + k))
+    {
+      cout << "YES" << endl;
+      return;
+    }
+  }
+
+  cout << "NO" << endl;
 }
 
 int32_t main()
 {
 
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-    int T = 1;
-    cin >> T;
-    while (T--)
-    {
-        solve();
-    }
-    return 0;
+  int T = 1;
+  cin >> T;
+  while (T--)
+  {
+    solve();
+  }
+  return 0;
 }
